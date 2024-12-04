@@ -8,8 +8,6 @@ public class Employee {
     private int age;
     private double currentMoney = 0;
 
-
-    //TODO: create constructors
     public Employee(String name, String job, double salary, int age) {
         this.name = name;
         this.job = job;
@@ -22,7 +20,6 @@ public class Employee {
     }
 
 
-    //TODO: create getters and setters
     public String getName() {
         return name;
     }
@@ -59,15 +56,22 @@ public class Employee {
         return currentMoney;
     }
 
-    //TODO: any other methods?
     public void pay(double money) {
         currentMoney += money;
     }
 
 
-    //TODO: create main method test
     public static void main(String[] args) {
         var bob = new Employee("bob", "astronaut", 1500000000, 99);
+
+        assert bob.getName().equals("bob");
+        assert bob.getJob().equals("astronaut");
+        assert bob.getSalary() == 1500000000;
+        assert bob.getAge() == 99;
+
+        bob.pay(100);
+
+        assert bob.getSalary() == 1500000100;
     }
 }
 

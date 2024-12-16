@@ -56,7 +56,7 @@ public class Employee {
         return currentMoney;
     }
 
-    public void work(double years) {
+    public void workYears(double years) {
         currentMoney += salary * years;
     }
 
@@ -69,9 +69,9 @@ public class Employee {
         assert bob.getSalary() == 1500000000;
         assert bob.getAge() == 99;
 
-        bob.work(1);
+        bob.workYears(10);
 
-        assert bob.getCurrentMoney() == bob.getSalary();
+        assert bob.getCurrentMoney() == bob.getSalary() * 10;
     }
 }
 

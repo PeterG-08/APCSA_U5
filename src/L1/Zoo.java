@@ -53,5 +53,14 @@ public class Zoo {
         var zoo = new Zoo("Bronx Zoo");
 
         assert zoo.getName().equals("Bronx Zoo");
+
+        var a = new Animal("dog", "a", true, 100, 1, "today");
+        var e = new Employee("bob", "janitor", 10, 30);
+
+        zoo.addAnimals(a);
+        zoo.addEmployees(e);
+
+        assert zoo.getAnimal("a", "dog") != null;
+        assert zoo.getEmployee("bob") != null;
     }
 }

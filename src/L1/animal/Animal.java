@@ -1,5 +1,8 @@
 package L1.animal;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Animal {
     //what information an animal needs
     private String species;
@@ -9,6 +12,7 @@ public class Animal {
     private int age;
     private String birthday;
 
+    private final List<Runnable> actions = new ArrayList<>();
     //question: do you need to fill in all instance variables for a class to work? can you only fill one?
 
     public Animal(String species, String name, boolean hungry, double weight, int age, String birthday) {
@@ -18,6 +22,8 @@ public class Animal {
         this.weight = weight;
         this.age = age;
         this.birthday = birthday;
+
+        addActions(this::makeNoise);
     }
 
     public Animal() { //class question: how can I bte as lazy as possible right now
@@ -27,6 +33,20 @@ public class Animal {
         this.weight = 360.77;
         this.age = 12;
         this.birthday = "11/11/11"; //because it is a string, can be formatted in any way
+
+        addActions(this::makeNoise);
+    }
+
+    public final String prefix() {
+        return "[" + "Animal: " + name + "] ";
+    }
+
+    public final void runActions() {
+        actions.forEach(Runnable::run);
+    }
+
+    public final void addActions(Runnable... actions) {
+        this.actions.addAll(List.of(actions));
     }
 
     //if you wanted to research an animal, what would you want to be able to look up?
@@ -57,9 +77,9 @@ public class Animal {
 
     public void makeNoise() {
         if (hungry){
-            System.out.println("*stomach growls*");
+            System.out.println(prefix() + "*stomach growls*");
         } else {
-            System.out.println("*snores*");
+            System.out.println(prefix() + "*snores*");
         }
     }
 

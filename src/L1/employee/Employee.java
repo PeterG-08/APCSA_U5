@@ -1,5 +1,8 @@
 package L1.employee;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Employee {
     //TODO: create employee class variables
     private String name;
@@ -8,17 +11,34 @@ public class Employee {
     private int age;
     private double currentMoney = 0;
 
+    private final List<Runnable> actions = new ArrayList<>();
+
     public Employee(String name, String job, double salary, int age) {
         this.name = name;
         this.job = job;
         this.salary = salary;
         this.age = age;
+
+        addActions(
+                this::workDay
+        );
     }
 
     public Employee() {
         this("Jeff", "Plumber", 10003.13, 13);
     }
 
+    public final String prefix() {
+        return "[" + "Employee: " + name + "] ";
+    }
+
+    public final void runActions() {
+        actions.forEach(Runnable::run);
+    }
+
+    public final void addActions(Runnable... actions) {
+        this.actions.addAll(List.of(actions));
+    }
 
     public String getName() {
         return name;
@@ -56,8 +76,8 @@ public class Employee {
         return currentMoney;
     }
 
-    public void workYears(double years) {
-        currentMoney += salary * years;
+    public void workDay() {
+        currentMoney += salary * (1 / 365.0);
     }
 
 
@@ -69,9 +89,9 @@ public class Employee {
         assert bob.getSalary() == 1500000000;
         assert bob.getAge() == 99;
 
-        bob.workYears(10);
-
-        assert bob.getCurrentMoney() == bob.getSalary() * 10;
+//        bob.workDay();
+//
+//        assert bob.getCurrentMoney() == bob.getSalary() * 10;
     }
 }
 

@@ -4,6 +4,9 @@ import L1.animal.Animal;
 import L1.animal.Cat;
 import L1.animal.Dog;
 import L1.animal.Giraffe;
+import L1.employee.Boss;
+import L1.employee.Cook;
+import L1.employee.Instructor;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,8 +16,13 @@ public class Main {
         var bob = new Giraffe("Bob", "January 1st");
         var jerry = new Cat("Jerry", "August 13th");
 
-        // add 1 teacher
-        // add 1 lunch lady
-        // add a librarian
+        var mrmoffit = new Instructor("Mr.Moffit", 22);
+        var andy = new Cook("Andy", 99);
+        var mrnewman = new Boss("Mr.Newman", 3);
+
+        bths.addAnimals(steve, bob, jerry);
+
+
+        bths.update();
     }
 }

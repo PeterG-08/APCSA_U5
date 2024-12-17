@@ -49,6 +49,16 @@ public class Zoo {
         throw new Error("Can't find employee: " + name);
     }
 
+    /**
+     * Update the zoo by 1 day, which will iterate through all the animals and employees and call their various actions.
+     */
+    public void update() {
+        animals.forEach(Animal::runActions);
+        employees.forEach(Employee::runActions);
+
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         var zoo = new Zoo("Bronx Zoo");
 

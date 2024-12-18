@@ -16,9 +16,6 @@ public class Animal {
         this.name = name;
     }
 
-    public Animal() {
-        this("giraffe", "geoffery");
-    }
 
     public final String prefix() {
         return "[" + species + ": " + name + "] ";

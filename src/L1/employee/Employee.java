@@ -21,10 +21,6 @@ public class Employee {
         );
     }
 
-    public Employee() {
-        this("Jeff", "Plumber", 10003.13);
-    }
-
     public final String prefix() {
         return "[" + job + ": " + name + "] ";
     }

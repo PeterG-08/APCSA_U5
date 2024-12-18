@@ -17,60 +17,26 @@ public class Zoo {
             this.name = name;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void addAnimals(Animal... animals) {
         this.animals.addAll(List.of(animals));
-    }
-
-    public Animal getAnimal(String name, String species) {
-        var animal = animals.stream().filter((a) -> a.getName().equals(name) && a.getSpecies().equals(species)).findFirst();
-
-        if (animal.isPresent()) {
-            return animal.get();
-        }
-
-        throw new Error("Can't find animal: " + name + " of species " + species);
     }
 
     public void addEmployees(Employee... employees) {
         this.employees.addAll(List.of(employees));
     }
 
-    public Employee getEmployee(String name) {
-        var employee = employees.stream().filter((a) -> a.getName().equals(name)).findFirst();
-
-        if (employee.isPresent()) {
-            return employee.get();
-        }
-
-        throw new Error("Can't find employee: " + name);
-    }
-
     /**
-     * Update the zoo by 1 day, which will iterate through all the animals and employees and call their various actions.
+     * Update the zoo by 1 day, which will iterate through all the animals and employees and call random actions.
      */
     public void update() {
-        animals.forEach(Animal::runActions);
-        employees.forEach(Employee::runActions);
+        System.out.println(" ---- Zoo: " + name + " ---- ");
+        animals.forEach(Animal::randomAction);
+        employees.forEach(Employee::randomAction);
 
         System.out.println();
     }
 
     public static void main(String[] args) {
-        var zoo = new Zoo("Bronx Zoo");
 
-        assert zoo.getName().equals("Bronx Zoo");
-
-        var a = new Animal("dog", "a", true, 100, 1, "today");
-        var e = new Employee("bob", "janitor", 10, 30);
-
-        zoo.addAnimals(a);
-        zoo.addEmployees(e);
-
-        assert zoo.getAnimal("a", "dog") != null;
-        assert zoo.getEmployee("bob") != null;
     }
 }

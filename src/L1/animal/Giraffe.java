@@ -1,8 +1,8 @@
 package L1.animal;
 
 public class Giraffe extends Animal {
-    public Giraffe(String name, String bday) {
-        super("dog", name, true, 10, 10, bday);
+    public Giraffe(String name) {
+        super("giraffe", name);
 
         addActions(
                 this::giveAcacia,
@@ -12,7 +12,6 @@ public class Giraffe extends Animal {
 
     public void giveAcacia() {
         System.out.println(prefix() + "thanks for the yummy acacia! Time to eat!");
-        setHungry(false);
     }
 
     public void brag() {

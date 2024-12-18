@@ -1,8 +1,8 @@
 package L1.animal;
 
 public class Dog extends  Animal {
-    public Dog(String name, String bday) {
-        super("dog", name, true, 10, 10, bday);
+    public Dog(String name) {
+        super("dog", name);
 
         addActions(
                 this::fetch,
@@ -21,6 +21,5 @@ public class Dog extends  Animal {
 
     public void giveTreat() {
         System.out.println(prefix() + "thanks so much for the treat!");
-        setHungry(false);
     }
 }

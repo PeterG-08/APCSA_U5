@@ -1,8 +1,7 @@
-package L1.animal;
+package Zoo.animal;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class Animal {
     //what information an animal needs

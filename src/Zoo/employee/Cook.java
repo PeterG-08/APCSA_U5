@@ -1,4 +1,4 @@
-package L1.employee;
+package Zoo.employee;
 
 public class Cook extends Employee {
     public Cook(String name) {

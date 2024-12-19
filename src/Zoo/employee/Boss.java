@@ -1,4 +1,4 @@
-package L1.employee;
+package Zoo.employee;
 
 public class Boss extends Employee {
     public Boss(String name) {

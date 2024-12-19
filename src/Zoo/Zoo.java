@@ -1,7 +1,7 @@
-package L1;
+package Zoo;
 
-import L1.animal.Animal;
-import L1.employee.Employee;
+import Zoo.animal.Animal;
+import Zoo.employee.Employee;
 
 import java.util.HashSet;
 import java.util.List;

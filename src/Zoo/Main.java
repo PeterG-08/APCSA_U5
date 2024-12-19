@@ -1,12 +1,11 @@
-package L1;
+package Zoo;
 
-import L1.animal.Animal;
-import L1.animal.Cat;
-import L1.animal.Dog;
-import L1.animal.Giraffe;
-import L1.employee.Boss;
-import L1.employee.Cook;
-import L1.employee.Instructor;
+import Zoo.animal.Cat;
+import Zoo.animal.Dog;
+import Zoo.animal.Giraffe;
+import Zoo.employee.Boss;
+import Zoo.employee.Cook;
+import Zoo.employee.Instructor;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package L1.animal;
+package Zoo.animal;
 
 public class Dog extends  Animal {
     public Dog(String name) {
